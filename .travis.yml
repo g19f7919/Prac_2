@@ -1,9 +1,6 @@
 language: csharp
 solution: Oware.sln
 os:
-    - Focal
-    - Fossa
-    - Ubuntu
     - linux
     - osx
 script:
@@ -11,3 +8,4 @@ script:
 jobs:
     include:
         - dotnet: 5.0
+        - dotnet: 3.0.3
