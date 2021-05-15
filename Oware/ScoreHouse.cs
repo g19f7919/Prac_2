@@ -3,7 +3,14 @@
 using System.Collections.Generic;
 
 namespace Oware {
-    public class ScoreHouse {
+
+    public interface IScoreHouse {
+        int GetCount();
+        bool AddSeed(Seed seed);
+        void Reset();
+    }
+
+    public class ScoreHouse : IScoreHouse {
         private List<Seed> seedsInHouse;
         public ScoreHouse() {
             seedsInHouse = new List<Seed>();
@@ -13,8 +20,9 @@ namespace Oware {
             return seedsInHouse.Count;
         }
 
-        public void AddSeed(Seed seed) {
+        public bool AddSeed(Seed seed) {
             seedsInHouse.Add(seed);
+            return true;
         }
 
         public void Reset() {
