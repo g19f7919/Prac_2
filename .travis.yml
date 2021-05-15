@@ -2,8 +2,9 @@ language: csharp
 solution: Oware.sln
 mono: none
 os:
-    - focal fossa ubuntu linux distribution
+    - linux
     - osx
+dist: focal
 script:
     - dotnet test
 jobs:
