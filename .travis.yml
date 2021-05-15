@@ -1,7 +1,7 @@
 language: csharp
 solution: Oware.sln
 mono: none
-dotnet: 5.0
+dotnet: 5.0.203
 os:
     - linux
     - osx
