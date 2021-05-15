@@ -1,5 +1,6 @@
 language: csharp
 solution: Oware.sln
+mono: none
 os:
     - linux
     - osx
