@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Oware.Tests
 {
     
-    public class MockScoreHouse : IScoreHouse {
+    public class MockScoreHouse : IScoreHouse {     //mock object class.
         
         public int GetCount() {
             throw new System.NotImplementedException();
@@ -43,19 +43,20 @@ namespace Oware.Tests
         }
 
         [Test]
-        public void WhenAddSeedToScoreHouseAddSeedIsCalled()
+        public void WhenAddSeedToScoreHouseAddSeedIsCalled()    
         {
             //arrange
-                //IScoreHouse mock = Substitute.For<IScoreHouse>();
+                //IScoreHouse mock = Substitute.For<IScoreHouse>();    //tried using the Nsubstitute package but had errors.
                 //mock.AddSeed(Seed seed).Returns(true);
-            IScoreHouse mock = new MockScoreHouse();
-            Player p1 = new Player("p1", mock);
+            IScoreHouse mock = new MockScoreHouse();    //create the Mock object
+            Player p1 = new Player("p1", mock);         //create a player object to use the mock object
             
             //act
-            bool test = p1.AddSeedToScoreHouse(new Seed());
+            bool test = p1.AddSeedToScoreHouse(new Seed());     //test the player method AddSeedToScoreHouse
+                                                                //which calles the mock object method AddSeed(returns true if called).
 
             //assert
-            Assert.AreEqual(true, test);
+            Assert.AreEqual(true, test);        //check result against mock object return value.
         }
     }
 }
